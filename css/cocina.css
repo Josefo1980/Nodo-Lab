@@ -1,0 +1,81 @@
+
+#gasodomestico {
+    position: relative;
+    width: 1300px; /* Ajusta el tamaño según tu imagen */
+    height: 770px; /* Ajusta el tamaño según tu imagen */
+    background-image: url('../img/Cocina1.png'); /* Ruta a la imagen de la estufa */
+    background-size: cover;
+  }
+/* Estilo para mostrar los valores de las variables */
+.valor-variable {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(65, 13, 236);
+    /* Ajusta la posición según tus necesidades */
+  }
+  
+  /* Estilos para ubicar los valores en puntos específicos */
+  .conc-hidrogeno {
+    top: 130px;
+    left: 335px;
+  }
+
+  /* Estilos para ubicar los valores en puntos específicos */
+  .caudal-hidrogeno {
+    top: 333px;
+    left: 145px;
+  }
+/* Estilos para ubicar los valores en puntos específicos */
+.presion-hidrogeno {
+  top: 373px;
+  left: 145px;
+}
+
+/* Estilos para ubicar los valores en puntos específicos */
+.temp-hidrogeno {
+  top: 413px;
+  left: 145px;
+}
+
+  /* Estilos para ubicar los valores en puntos específicos */
+  .caudal-gn {
+    top: 636px;
+    left: 145px;
+  }
+/* Estilos para ubicar los valores en puntos específicos */
+.presion-gn {
+  top: 676px;
+  left: 145px;
+}
+
+/* Estilos para ubicar los valores en puntos específicos */
+.temp-gn {
+  top: 716px;
+  left: 145px;
+}
+
+/* Estilos para ubicar los valores en puntos específicos */
+.caudal-mix {
+  top: 248px;
+  left: 690px;
+}
+
+/* Estilos para ubicar los valores en puntos específicos */
+.presion-mix {
+  top: 288px;
+  left: 690px;
+}
+
+/* Estilos para ubicar los valores en puntos específicos */
+.temp-mix {
+  top: 323px;
+  left: 690px;
+}
+
+/* Estilos para ubicar los valores en puntos específicos */
+.temp-llama {
+  top: 626px;
+  left: 730px;
+}
+

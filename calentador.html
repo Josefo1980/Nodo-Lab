@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Laboratorio de Combustión - Vista Calentador</title>
+    
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/cocina.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0"></script>
+   <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.7.0"></script>-->
+     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@1.1.1"></script>
+     <script src="https://code.highcharts.com/highcharts.js"></script>
+     <script src="https://code.highcharts.com/modules/data.js"></script>
+     <script src="https://code.highcharts.com/modules/exporting.js"></script>
+     <script src="https://code.highcharts.com/modules/export-data.js"></script>
+     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+</head>
+
+<body id="page-top">
+
+    
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar creado en el sidebar.html -->
+        <div id="sidebarContainer"></div>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+
+    
+            <div id="content">
+
+                <!-- Topbar creado en el Topbar.html -->
+                <div id="topbarContainer"></div>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Ensayos a gasodoméstico tipo Calentador</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    </div>
+                    
+                    <!-- Content Row -->
+                    <div class="row">
+                        
+                        <!-- Carbon Monixide Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-lg font-weight-bold text-primary text-uppercase mb-1">
+                                                Monóxido Carbono</div>
+                                                <div class="row no-gutters align-items-center">    
+                                                <div id="COAmb" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0</div>
+                                            <div class="col">
+                                                <div class="progress progress-sm mr-2">
+                                                    <div class="progress-bar" role="progressbar"
+                                                    id="progressBar1" aria-valuenow="50" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Metano Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-lg font-weight-bold text-success text-uppercase mb-1">
+                                                Metano</div>
+                                            <div class="row no-gutters align-items-center"> 
+                                                <div class="col-auto">
+                                                  <div id="CH4Amb" class="h5 mb-0 mr-3 font-weight-bold text-gray-800"> %mol</div>
+                                                </div>
+                                                  <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar" role="progressbar"
+                                                        id="progressBar2" aria-valuenow="50" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                  </div>   
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- Hidrógeno Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-lg font-weight-bold text-info text-uppercase mb-1">Hidrógeno
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div id="H2Amb" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">% mol</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Temp. Amb. Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-lg font-weight-bold text-warning text-uppercase mb-1">
+                                                Temp. Ambiente</div>
+                                            <div id="TAmb" class="h5 mb-0 font-weight-bold text-gray-800">20°C</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+
+                     <!-- Gráfica de cocina -->
+                    <div class="row row-cols-1">
+                        <div class="col">
+                            <div class="card shadow mb-12">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Diagrama de ensayo a cocinas</h6>
+                                    <div class="d-flex align-items-center">
+                                        <h6 class="m-0 font-weight-bold text-primary mr-1">%H2 requerido</h6>
+                                        <input type="text" id="newValueInput" placeholder="Nuevo valor"style="width: 100px;" class="mr-1">
+                                        <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="updateValueButton">Actualizar</button>
+                                    </div>
+
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div>
+                                        <div id="gasodomestico">
+                                                
+                                        </div>
+                                   <!-- Agrega elementos para mostrar los valores de las variables en puntos específicos -->
+                                         <div class="valor-variable conc-hidrogeno" id="concentracionH2">0</div>
+                                         <div class="valor-variable caudal-hidrogeno" id="caudalH2">0</div> 
+                                         <div class="valor-variable presion-hidrogeno" id="presionH2">0</div> 
+                                         <div class="valor-variable temp-hidrogeno" id="tempH2">0</div> 
+                                         <div class="valor-variable caudal-gn" id="caudalGn">0</div>
+                                         <div class="valor-variable presion-gn" id="presionGn">0</div>
+                                         <div class="valor-variable temp-gn" id="tempGn">0</div>
+                                         <div class="valor-variable caudal-mix" id="caudalMix">0</div>
+                                         <div class="valor-variable presion-mix" id="presionMix">0</div>
+                                         <div class="valor-variable temp-mix" id="tempMix">0</div>
+                                         <div class="valor-variable temp-llama" id="tempLlama">0</div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                       
+
+
+                    </div>
+
+
+
+
+                    <div class="row row-cols-1">
+
+                        <!-- Area Chart -->
+                        <div class="col">
+                            <div class="card shadow mb-12">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Sensores del Laboratorio</h6>
+                                  <div>
+                                    <label for="graphSelect">Seleccionar variable:</label>
+                                    <select id="graphSelect">
+                                    <option >seleccionar</option> 
+                                      <option value="BEH2">Blue eye H2</option>
+                                      <option value="BET">Blue eye T</option>
+                                      <option value="BEP">Blue eye P</option>
+                                      <option value="BEP">Blue eye P</option>
+                                      <option value="C1Q">Cubic_1 Q</option>
+                                      <option value="C1P">Cubic_1 P</option>
+                                      <option value="C1T">Cubic_1 T</option>
+                                      <option value="C2Q">Cubic_2 Q</option>
+                                      <option value="C2P">Cubic_2 P</option>
+                                      <option value="C2T">Cubic_2 T</option>
+                                      <option value="C2Q">Cubic_3 Q</option>
+                                      <option value="C2P">Cubic_3 P</option>
+                                      <option value="C2T">Cubic_3 T</option>
+                                      <option value="A1H2FV">Alicat_H Q</option>
+                                      <!-- Agrega más opciones para más gráficas -->
+                                    </select>
+                                  </div>
+
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body custom-chart-container">
+                                    <figure class="highcharts-figure">
+                                        <div id="chart1"></div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+
+                     <!-- Content Row -->
+                     <div class="row">
+
+                        <!-- Content Column -->
+
+
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; CDT de GAS 2023</span>
+                        
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="cargaHtml.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+    <!-- <script src="js/demo/chart-area-demo.js"></script>-->
+    <script src="js/demo/highChart-area-demo.js"></script>
+
+    <script src="js/demo/var_cocina.js"></script>
+
+    <!--<script src="script.js"></script>-->
+
+</body>
+
+</html>
